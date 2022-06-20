@@ -1,11 +1,11 @@
-#!/usr/bin/python3i
-from sys import stderr
+#!/usr/bin/python3
+import sys
+
 
 def safe_print_integer_err(value):
     try:
-        print("{:d}".format(value))
-    except Exception as inst:
-        print("Exception: {}".format(inst), file=stderr)
+        print('{:d}'.format(value))
+    except Exception as ex:
+        print('Exception: {}'.format(ex), file=sys.stderr)
         return False
     return True
-© 2022 GitHub, Inc.
