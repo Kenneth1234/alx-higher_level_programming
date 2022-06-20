@@ -11,6 +11,4 @@ def magic_calculation(a, b):
             result = a + b
             break
     return result
-© 2022 GitHub, Inc.
-Terms
 
