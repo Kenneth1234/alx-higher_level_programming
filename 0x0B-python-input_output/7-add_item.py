@@ -1,12 +1,17 @@
 #!/usr/bin/python3
-"""save_to_json_file
-"""
-import json
+'''task 7 module'''
 
 
-def save_to_json_file(my_obj, filename):
-    """Writes an object to a text file, using JSON
-    """
+import sys
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-    with open(filename, mode="w", encoding="UTF-8") as saveFile:
-        json.dump(my_obj, saveFile)
+arglist = list(sys.argv[1:])
+
+try:
+    old_data = load_from_json_file('add_item.json')
+except Exception:
+    old_data = []
+
+old_data.extend(arglist)
+save_to_json_file(old_data, 'add_item.json')
